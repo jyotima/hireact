@@ -1,3 +1,7 @@
 import * as React from 'react';
-const App = () => <h1>Hello</h1>;
+export class App extends React.Component<void, void> {
+  public render(): JSX.Element {
+    return <h1>Component</h1>;
+  }
+}
 export default App;
