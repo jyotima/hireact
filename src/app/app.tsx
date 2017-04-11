@@ -1,11 +1,14 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 interface ICustomProps {
-  txt: string;
+  txt?: string;
   cat: number
 }
 
 class App extends React.Component<ICustomProps, void> {
+  public static defaultProps: Partial<ICustomProps> = {
+        txt: "default"
+    };
   public render(): JSX.Element {
     let txt = this.props.txt;
     let cat = this.props.cat;
@@ -13,11 +16,4 @@ class App extends React.Component<ICustomProps, void> {
   }
 }
 
-const App1: React.StatelessComponent<ICustomProps> = ({txt = "default", cat}) => {
-  return (
-    <span>Hello, {txt}, {cat}</span>
-  );
-};
-
-
-export { App, App1 };
+export { App };
