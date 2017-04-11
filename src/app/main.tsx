@@ -1,5 +1,5 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './app'
+import { App, App1 } from './app'
 
-ReactDOM.render(<App txt="this is the prop text1" cat="another"/>, document.getElementById('root'));
+ReactDOM.render(<App1 txt="this is the prop text1" cat={11} />, document.getElementById('root'));

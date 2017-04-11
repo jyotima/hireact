@@ -1,13 +1,23 @@
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 interface ICustomProps {
   txt: string;
-  cat: string;
+  cat: number
 }
-export class App extends React.Component<ICustomProps, void> {
+
+class App extends React.Component<ICustomProps, void> {
   public render(): JSX.Element {
     let txt = this.props.txt;
     let cat = this.props.cat;
     return <div><h1>{txt}</h1><h2>{cat}</h2></div>;
   }
 }
-export default App;
+
+const App1: React.StatelessComponent<ICustomProps> = ({txt = "default", cat}) => {
+  return (
+    <span>Hello, {txt}, {cat}</span>
+  );
+};
+
+
+export { App, App1 };
