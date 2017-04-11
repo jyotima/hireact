@@ -1,7 +1,11 @@
 import * as React from 'react';
-export class App extends React.Component<void, void> {
+interface ICustomProps {
+  txt: string;
+}
+export class App extends React.Component<ICustomProps, void> {
   public render(): JSX.Element {
-    return <h1>Component</h1>;
+    let txt = this.props.txt;
+    return <div><h1>{txt}</h1></div>;
   }
 }
 export default App;
